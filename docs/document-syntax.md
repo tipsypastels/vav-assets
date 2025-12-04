@@ -58,6 +58,12 @@ Causes the section to have the server icon as its thumbnail.
 
 **Example:** `{{ guildthumbnail }}`.
 
+### `{{ hidedivafter }}`
+
+Causes the dividing line separating this section and the next section to be invisible. There will still be a gap between the sections. Does nothing if there is no next section.
+
+**Example:** `{{ hidedivafter }}`.
+
 ## Global Flags
 
 Helpers that affect the behaviour of the final output in some other way.
