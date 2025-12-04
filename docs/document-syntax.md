@@ -52,9 +52,15 @@ Becomes an emoji of the server icon. This is the same in practice as `{{ guildem
 
 Helpers that affect the behaviour of the current **section**. A section is a portion of the input text separated by `---`, which translates into a visible divider.
 
+### `{{ thumbnail "url" }}`.
+
+Causes the section to have the provided image url as its thumbnail. The thumbnail is a large image that appears in the top right of the section. Mutually incompatible with `{{ guildthumbnail }}`.
+
+**Example:** `{{ thumbnail "https://raw.githubusercontent.com/tipsypastels/vav-assets/refs/heads/main/ziz.png" }}`.
+
 ### `{{ guildthumbnail }}`
 
-Causes the section to have the server icon as its thumbnail.
+Causes the section to have the server icon as its thumbnail. Mutually incompatible with `{{ thumbnail }}`.
 
 **Example:** `{{ guildthumbnail }}`.
 
