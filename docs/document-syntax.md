@@ -46,6 +46,8 @@ Becomes an emoji from Vav, without needing to copy its ID.
 
 Becomes an emoji of the server icon. This is the same in practice as `{{ guildemoji "earthvav" }}` since we already have a server icon emoji on Vav, but `{{ guildicon }}` would work even if that emoji didn't exist.
 
+**Example:** `{{ guildicon }}`.
+
 ## Section Flags
 
 Helpers that affect the behaviour of the current **section**. A section is a portion of the input text separated by `---`, which translates into a visible divider.
@@ -54,6 +56,8 @@ Helpers that affect the behaviour of the current **section**. A section is a por
 
 Causes the section to have the server icon as its thumbnail.
 
+**Example:** `{{ guildthumbnail }}`.
+
 ## Global Flags
 
 Helpers that affect the behaviour of the final output in some other way.
@@ -61,3 +65,5 @@ Helpers that affect the behaviour of the final output in some other way.
 ### `{{ accent "colour" }}`
 
 Sets the accent colour of the output. The accent colour of a container is the bar of colour running along the left side. The value for colour may be a hex code, e.g. `#11806a`, or one of Ziz's built-in colour names: `info`, `ok`, `warning`, `error`, `mod`. For the default Vavvers colour used for most Ziz messages, use `info`.
+
+**Examples:** `{{ accent "info" }}`, `{{ accent "#11806a" }}`.
