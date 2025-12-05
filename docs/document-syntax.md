@@ -48,6 +48,21 @@ Becomes an emoji of the server icon. This is the same in practice as `{{ guildem
 
 **Example:** `{{ guildicon }}`.
 
+### `{{#vavlist}}...{{/vavlist}}`
+
+Becomes a stylized two-level list with virtual emojis as numbers and letters. The input syntax is a line starting with `[0-9].` or `[a-z].`. Note that although `[a-z].` lines are assumed to be sub-list items, they are not to be indented in the input. Also unlike Discord, dashes are not used in the input.
+
+**Example:**
+```hbs
+{{#vavlist}}
+1. item one
+a. sub-item one
+2. item two
+a. sub-item two a
+b. sub-item two b
+{{/vavlist}}
+```
+
 ## Section Flags
 
 Helpers that affect the behaviour of the current **section**. A section is a portion of the input text separated by `---`, which translates into a visible divider.
