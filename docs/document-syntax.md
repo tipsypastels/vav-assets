@@ -48,20 +48,11 @@ Becomes an emoji of the server icon. This is the same in practice as `{{guildemo
 
 **Example:** `{{guildicon}}`.
 
-### `{{#vavlist}}...{{/vavlist}}`
+### `{{li digit|"letter"}}`
 
-Becomes a stylized two-level list with virtual emojis as numbers and letters. The input syntax is a line starting with `[0-9].` or `[a-z].`. Note that although `[a-z].` lines are assumed to be sub-list items, they are not to be indented in the input. Also unlike Discord, dashes are not used in the input.
+Becomes stylized virtual emoji of a digit or letter, to be used in lists. The input must be that same digit or letter. If the input is a number outside of `0-9` or a string outside of `a-z`, an error is thrown.
 
-**Example:**
-```hbs
-{{#vavlist}}
-1. item one
-a. sub-item one
-2. item two
-a. sub-item two a
-b. sub-item two b
-{{/vavlist}}
-```
+**Examples:** `{{li 1}}`, `{{li "a"}}`
 
 ## Section Flags
 
@@ -79,11 +70,17 @@ Causes the section to have the server icon as its thumbnail. Mutually incompatib
 
 **Example:** `{{guildthumbnail}}`.
 
-### `{{hidedivafter}}`
+### `{{nextseparator "hidden"|"skip"}}`
 
-Causes the dividing line separating this section and the next section to be invisible. There will still be a gap between the sections. Does nothing if there is no next section.
+Changes the behaviour of the dividing line separating this section and the next section. By default, a visible line will be shown.
 
-**Example:** `{{hidedivafter}}`.
+- If the provided parameter is `"hidden"`, the line will be invisible, but the content will still be spaced as though there was a dividing line.
+- If the provided parameter is `"skip"`, the line and spacing between sections will both be skipped, and the spacing will instead be half that of a standard paragraph gap.
+- If the provided parameter is any other value, an error will be thrown.
+
+This command has no effect if there is no next section.
+
+**Examples:** `{{nextseparator "hidden"}}`, `{{nextseparator "skip"}}`.
 
 ## Global Flags
 
