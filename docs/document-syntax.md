@@ -34,7 +34,7 @@ Becomes a mention of **The Simurgh**.
 
 Becomes a bot-specific emoji, without needing to copy its ID. This is only for emojis that have been uploaded to Ziz directly, you may want `{{guildemoji}}` instead.
 
-**Example:** `{{botemoji "zizwing"}}`.
+**Example:** `{{botemoji "ziz_wing_left"}}`.
 
 ### `{{guildemoji "name"}}`
 
