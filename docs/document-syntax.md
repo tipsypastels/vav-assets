@@ -30,23 +30,29 @@ Becomes a mention of **The Simurgh**.
 
 **Example:** `{{ziz}}`.
 
-### `{{botemoji "name"}}`
+### `{{builtin-emoji "name"}}`
 
-Becomes a bot-specific emoji, without needing to copy its ID. This is only for emojis that have been uploaded to Ziz directly, you may want `{{guildemoji}}` instead.
+Becomes a builtin Discord emoji, without needing to copy its unicode string.
 
-**Example:** `{{botemoji "ziz_wing_left"}}`.
+**Example:** `{{builtin-emoji "heart"}}`.
 
-### `{{guildemoji "name"}}`
+### `{{guild-emoji "name"}}`
 
 Becomes an emoji from Vav, without needing to copy its ID.
 
-**Example:** `{{guildemoji "tattletrue"}}`.
+**Example:** `{{guild-emoji "tattletrue"}}`.
 
-### `{{guildicon}}`
+### `{{bot-emoji "name"}}`
 
-Becomes an emoji of the server icon. This is the same in practice as `{{guildemoji "earthvav"}}` since we already have a server icon emoji on Vav, but `{{guildicon}}` would work even if that emoji didn't exist.
+Becomes a bot-specific emoji, without needing to copy its ID. This is only for emojis that have been uploaded to Ziz directly, you may want `{{guild-emoji}}` instead.
 
-**Example:** `{{guildicon}}`.
+**Example:** `{{bot-emoji "ziz_wing_left"}}`.
+
+### `{{guild-icon}}`
+
+Becomes an emoji of the server icon. This is the same in practice as `{{guild-emoji "earthvav"}}` since we already have a server icon emoji on Vav, but `{{guild-icon}}` would work even if that emoji didn't exist.
+
+**Example:** `{{guild-icon}}`.
 
 ### `{{li digit|"letter"}}`
 
@@ -60,17 +66,17 @@ Helpers that affect the behaviour of the current **section**. A section is a por
 
 ### `{{thumbnail "url"}}`.
 
-Causes the section to have the provided image url as its thumbnail. The thumbnail is a large image that appears in the top right of the section. Mutually incompatible with `{{guildthumbnail}}`.
+Causes the section to have the provided image url as its thumbnail. The thumbnail is a large image that appears in the top right of the section. Mutually incompatible with `{{guild-thumbnail}}`.
 
 **Example:** `{{thumbnail "https://raw.githubusercontent.com/tipsypastels/vav-assets/refs/heads/main/ziz.png"}}`.
 
-### `{{guildthumbnail}}`
+### `{{guild-thumbnail}}`
 
 Causes the section to have the server icon as its thumbnail. Mutually incompatible with `{{thumbnail}}`.
 
-**Example:** `{{guildthumbnail}}`.
+**Example:** `{{guild-thumbnail}}`.
 
-### `{{nextseparator "hidden"|"skip"}}`
+### `{{next-separator "hidden"|"skip"}}`
 
 Changes the behaviour of the dividing line separating this section and the next section. By default, a visible line will be shown.
 
@@ -80,7 +86,7 @@ Changes the behaviour of the dividing line separating this section and the next 
 
 This command has no effect if there is no next section.
 
-**Examples:** `{{nextseparator "hidden"}}`, `{{nextseparator "skip"}}`.
+**Examples:** `{{next-separator "hidden"}}`, `{{next-separator "skip"}}`.
 
 ## Global Flags
 
