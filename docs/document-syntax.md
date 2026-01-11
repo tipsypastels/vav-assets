@@ -34,11 +34,15 @@ Becomes a mention of **The Simurgh**.
 
 Becomes a builtin Discord emoji, without needing to copy its unicode string.
 
+If used inside an `{{#autorole-button}}` block, sets the emoji of the button.
+
 **Example:** `{{builtin-emoji "heart"}}`.
 
 ### `{{guild-emoji "name"}}`
 
 Becomes an emoji from Vav, without needing to copy its ID.
+
+If used inside an `{{#autorole-button}}` block, sets the emoji of the button.
 
 **Example:** `{{guild-emoji "tattletrue"}}`.
 
@@ -46,11 +50,15 @@ Becomes an emoji from Vav, without needing to copy its ID.
 
 Becomes a bot-specific emoji, without needing to copy its ID. This is only for emojis that have been uploaded to Ziz directly, you may want `{{guild-emoji}}` instead.
 
+If used inside an `{{#autorole-button}}` block, sets the emoji of the button.
+
 **Example:** `{{bot-emoji "ziz_wing_left"}}`.
 
 ### `{{guild-icon}}`
 
 Becomes an emoji of the server icon. This is the same in practice as `{{guild-emoji "earthvav"}}` since we already have a server icon emoji on Vav, but `{{guild-icon}}` would work even if that emoji didn't exist.
+
+If used inside an `{{#autorole-button}}` block, sets the emoji of the button.
 
 **Example:** `{{guild-icon}}`.
 
@@ -59,6 +67,22 @@ Becomes an emoji of the server icon. This is the same in practice as `{{guild-em
 Becomes stylized virtual emoji of a digit or letter, to be used in lists. The input must be that same digit or letter. If the input is a number outside of `0-9` or a string outside of `a-z`, an error is thrown.
 
 **Examples:** `{{li 1}}`, `{{li "a"}}`
+
+### `{{autorole "name" reversible=bool}}`
+
+Becomes an autorole button that gives the role with the corresponding name. The optional flag reversible can be set to `true` to allow removing the autorole with the same button.
+
+This helper can optionally be used as a block helper. If so, the text inside the block will become the button's label, and the helpers `{{builtin-emoji}}`, `{{guild-emoji}}`, `{{bot-emoji}}`, `{{guild-icon}}`, `{{role-color}}` or `{{role-icon}}` can be used inside the block to configure the button's icon.
+
+**Examples:** `{{autorole "Teal" reversible=true}}` `{{#autorole-button "Vavver"}}{{guild-icon}} Read the rules? Click to enter!{{/autorole-button}}`
+
+### `{{role-color}}`
+
+Causes the autorole button to have a virtual emoji of its role colour. Errors if used outside an `{{#autorole-button}}` block.
+
+### `{{role-icon}}`
+
+Causes the autorole button to have a virtual emoji of its role icon. Errors if used outside an `{{#autorole-button}}` block.
 
 ## Section Flags
 
@@ -91,6 +115,10 @@ This command has no effect if there is no next section.
 ## Global Flags
 
 Helpers that affect the behaviour of the final output in some other way.
+
+### `{{no-container}}`
+
+Causes the output to appear as text without a container. Incompatible with `{{accent}}`, `{{thumbnail}}`, and `{{guild-thumbnail}}`.
 
 ### `{{accent "colour"}}`
 
