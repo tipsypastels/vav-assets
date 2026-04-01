@@ -107,6 +107,7 @@ And that's pretty much it!
 
 ### When used for link checks
 
+- `url(string)` returns whether the URL being matched again contains the provided string.
 - `query(string)` searches for a certain node on the page using [CSS selector syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors). Returns whether the node exists.
 - `is-moderator` returns whether the message author is a mod.
 - `is-nsfw-channel` returns if the channel is NSFW.
@@ -130,11 +131,11 @@ is-channel("welcome")
 **Link check violation on AO3 links with a certain banned tag, unless it's linked by a mod:**
 
 ```perl6
-query("a[href='/tags/Underage%20Sex/works']") && !is-moderator
+url("archiveofourown.org/works/") && query("a[href='/tags/Underage%20Sex/works']") && !is-moderator
 ```
 
 **Also link check violation on NSFW fics linked in SFW channels, again unless a mod:**
 
 ```perl6
-!is-nsfw-channel && query("a[href='/tags/Explicit/works']") && !is-moderator
+!is-nsfw-channel && url("archiveofourown.org/works/") && query("a[href='/tags/Explicit/works']") && !is-moderator
 ```
