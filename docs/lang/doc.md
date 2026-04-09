@@ -4,10 +4,11 @@ Some Ziz commands that allow the user to enter custom longform text via a modal 
 
 In addition, some places where the language is used (like the `/document` commands) support additional syntax used to customize the appearance and behaviour of the output, like changing the accent colour of the container or attaching autorole or modmail-triggering buttons. These features are called "blocks mode" internally, a superset of the simpler default "text mode".
 
-Document language is currently used in two places:
+Document language is currently used in three places:
 
 - The `/document` family of commands (in blocks mode).
 - The `/config tab:help` fields for "other features" of Ziz (in text mode).
+- The `/infraction create` fields for "reason" and "moderator note" (in text mode).
 
 # How it works
 
