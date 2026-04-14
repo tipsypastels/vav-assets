@@ -49,11 +49,12 @@ The syntax for a "sourced emoji", then, is `:source:name:`.
   - `:guild:ratty:` will become Vav's ratty emoji.
   - `:bot:info:` will become Ziz's commonly used info icon.
 
-### Guild Emoji
+### Guild/Bot Icon Emojis
 
 A special case.
 
-`:guild:` becomes a generated emoji of the server icon.
+- `:guild:` becomes a generated emoji of the server icon.
+- `:bot:` becomes a generated emoji of the bot icon.
 
 ### Stylized List Items
 
